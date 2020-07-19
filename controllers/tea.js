@@ -15,7 +15,7 @@ const deleteAllTea = (req, res, next) => {
 
 //GET 1 tea
 const getOneTea = (req, res, next) => {
-    res.json({message: "GET 1 tea"});
+    res.json({message: "GET 1 tea with id " + req.params.id});
 };
 
 //POST 1 tea comment
