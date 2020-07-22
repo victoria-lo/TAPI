@@ -1,26 +1,28 @@
-//import tea model
 const Tea = require('../models/tea');
+const multer = require('multer');
 
-//GET all teas
-const getAllTea = (req, res) => {
-    Tea.find({}, (err, data)=>{
-        if (err){
-            return res.json({Error: err});
-        }
-        return res.json(data);
-    })
-};
+//upload Image
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, './uploads');
+      },
+    filename: function (req, file, cb) {
+        cb(null, file.originalname);
+    }
+});
+
+const uploadImg = multer({storage: storage}).single('image');
 
 //POST tea
 const newTea = (req, res) => {
     //check if tea already exists in db
     Tea.findOne({name:req.body.name},(data)=>{
-    
+        console.log(req.file);
         //if tea not in db, add it
         if(data===null){
             const newTea = new Tea({
                 name:req.body.name,
-                image: req.body.image,
+                image: req.file.path,
                 description: req.body.description,
                 keywords: req.body.keywords,
                 origin: req.body.origin,
@@ -37,6 +39,16 @@ const newTea = (req, res) => {
             return res.json({message:"Tea exists"});
         }
     })    
+};
+
+//GET all teas
+const getAllTea = (req, res) => {
+    Tea.find({}, (err, data)=>{
+        if (err){
+            return res.json({Error: err});
+        }
+        return res.json(data);
+    })
 };
 
 //DELETE teas
@@ -103,7 +115,8 @@ const deleteOneTea = (req, res) => {
 
 //export controller
 module.exports = {
-    getAllTea, 
+    getAllTea,
+    uploadImg,
     newTea,
     deleteAllTea,
     getOneTea,
