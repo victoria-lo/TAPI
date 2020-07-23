@@ -74,9 +74,9 @@ $.fn.postTea = function(){
     <button type="submit" class="form-btn" id="newTea">MAKE new tea!</button>');
 
     $('#newTea').on('click', function() {
-        let form = $("myform")[0];
-        let fd = new FormData(form);
-        console.log(fd);
+        const form = $("myform")[0];
+        const fd = new FormData(form);
+        console.log(fd.getAll());
         $.ajax({
             url: 'https://tea-api-vic-lo.herokuapp.com/tea/',
             type: 'post',
