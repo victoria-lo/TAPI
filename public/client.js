@@ -56,6 +56,9 @@ $.fn.postOne = function(){
             data: JSON.stringify({"comment":$('#comment').val()}),
             success: function(data) {
                 $('#display').html("<p>Thanks for your comment! Here's all the comments so far.</p><pre>"+JSON.stringify(data.comments,null,2)+"</pre>")
+            },
+            error: function (error) {
+                $('#display').html("<p>Invalid Tea.</p>")
             }
         });
     });
@@ -119,15 +122,15 @@ $.fn.delAll = function(){
 
 $.fn.delOne = function(){
     $('#display').append('<input type="text" id="delOne" name="name" placeholder="Tea to delete">\
-    <input type="text" id="apikeydelAll" name="apikeydelAll" placeholder="Admin Password">\
-    <button type="click" class="form-btn" id="delOne">DELETE Tea!</button>');
+    <input type="text" id="apikeydelOne" name="apikeydelOne" placeholder="Admin Password">\
+    <button type="click" class="form-btn" id="delOneBtn">DELETE Tea!</button>');
 
-    $('#delOne').on('click', function() {
+    $('#delOneBtn').on('click', function() {
         $.ajax({
             url: 'https://tea-api-vic-lo.herokuapp.com/tea/'+$('#delOne').val(),
             type: 'delete',
             headers:{
-                "apikey": $('#apikeydelAll').val()
+                "apikey": $('#apikeydelOne').val()
             },
             success: function(data) {
                 $('#display').html("<pre>"+JSON.stringify(data,null,2)+"</pre>")
