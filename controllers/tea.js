@@ -1,5 +1,21 @@
 const Tea = require('../models/tea');
 const multer = require('multer');
+const jwt = require('jsonwebtoken');
+
+//login with apikey
+const login = (req,res,next) =>{
+    Tea.findById(req.headers.apikey, (err, data)=>{
+        console.log(req.headers.apikey);
+        if(err){
+            return res.json(err);
+        }
+        if(data !== null){
+            next();
+        }else{
+            return res.json("Invalid Key. Access Denied.");
+        }
+    });
+}
 
 //upload Image
 const storage = multer.diskStorage({
@@ -17,7 +33,6 @@ const uploadImg = multer({storage: storage}).single('image');
 const newTea = (req, res) => {
     //check if tea already exists in db
     Tea.findOne({name:req.body.name},(data)=>{
-        console.log(req.file);
         //if tea not in db, add it
         if(data===null){
             const newTea = new Tea({
@@ -121,5 +136,6 @@ module.exports = {
     deleteAllTea,
     getOneTea,
     newComment,
-    deleteOneTea
+    deleteOneTea,
+    login
 };
