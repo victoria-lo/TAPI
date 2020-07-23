@@ -15,7 +15,7 @@ app.use('/uploads', express.static('./uploads')); // makes uploads folder availa
 
 app.use(express.json()); //parses incoming requests as JSON
 
-app.use('/tea', routes);
+app.use('/', routes);
 
 //establish connection to database
 
