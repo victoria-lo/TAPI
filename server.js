@@ -20,14 +20,14 @@ app.use('/', routes);
 //establish connection to database
 
 mongoose.connect(
-    process.env.URI,
+    process.env.MONGODB_URI,
     { useFindAndModify: false,useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true},
     function (err) {
         if (err) return console.log("Error: ", err);
         console.log("MongoDB Connection -- Ready state is:", mongoose.connection.readyState);
-        const listener = app.listen(process.env.PORT || 3000, () => {
-            console.log('Your app is listening on port ' + listener.address().port)
-        })
+       
     }   
 );
 
+const listener = app.listen(process.env.PORT || 3000);
+module.exports = app;
