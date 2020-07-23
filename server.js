@@ -27,7 +27,19 @@ app.route('/')
 //establish connection to database
 mongoose.connect(
     process.env.MONGODB_URI,
-    { useFindAndModify: false,useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true},
+    { useFindAndModify: false,useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true,
+        server: { 
+            socketOptions: { 
+              keepAlive: 300000, connectTimeoutMS: 30000 
+            } 
+          }, 
+          replset: { 
+            socketOptions: { 
+              keepAlive: 300000, 
+              connectTimeoutMS : 30000 
+            } 
+          } 
+        },
     function (err) {
         if (err) return console.log("Error: ", err);
         console.log("MongoDB Connection -- Ready state is:", mongoose.connection.readyState);
