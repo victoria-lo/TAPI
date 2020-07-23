@@ -9,7 +9,7 @@ const login = (req,res,next) =>{
             return res.json(err);
         }
         if(data !== null){
-            next();
+            return next();
         }else{
             return res.json("Invalid Key. Access Denied.");
         }
