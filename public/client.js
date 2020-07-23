@@ -111,7 +111,7 @@ $.fn.delAll = function(){
                 "apikey": $('#apikeydelAll').val()
             },
             success: function(data) {
-                $('#display').html("<pre>"+JSON.stringify(data,null,2)+"</pre>")
+                $('#display').html("<p>Delete All Completed!</p><pre>"+JSON.stringify(data,null,2)+"</pre>")
             },
             error: function (error) {
                 $('#display').html("<p>Invalid Admin Password. Access Denied.</p>")
@@ -133,7 +133,7 @@ $.fn.delOne = function(){
                 "apikey": $('#apikeydelOne').val()
             },
             success: function(data) {
-                $('#display').html("<pre>"+JSON.stringify(data,null,2)+"</pre>")
+                $('#display').html("<p>Tea deleted.</p><pre>"+JSON.stringify(data,null,2)+"</pre>")
             },
             error: function (error) {
                 $('#display').html("<p>Invalid Admin Password. Access Denied.</p>")
