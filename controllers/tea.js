@@ -3,17 +3,11 @@ const multer = require('multer');
 
 //login with apikey
 const login = (req,res,next) =>{
-    Tea.findById(req.headers.apikey, (err, data)=>{
-        console.log(req.headers.apikey);
-        if(err){
-            return res.json(err);
-        }
-        if(data !== null){
-            return next();
-        }else{
-            return res.json("Invalid Key. Access Denied.");
-        }
-    });
+    if(req.headers.apikey==process.env.API_KEY){
+        return next();
+    }else{
+        return res.json("Invalid Key. Access Denied.");
+    }
 }
 
 //upload Image
