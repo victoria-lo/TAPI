@@ -1,9 +1,15 @@
 const express = require ('express');
 const routes = require('./routes/tea');
 const mongoose = require('mongoose');
+const helmet = require('helmet');
+const compression = require('compression');
+
 require('dotenv').config();
 
 const app = express();
+
+app.use(helmet());
+app.use(compression()); //Compress all routes
 
 app.use('/uploads', express.static('./uploads')); // makes uploads folder available
 

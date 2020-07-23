@@ -1,6 +1,5 @@
 const Tea = require('../models/tea');
 const multer = require('multer');
-const jwt = require('jsonwebtoken');
 
 //login with apikey
 const login = (req,res,next) =>{
