@@ -1,0 +1,77 @@
+html *{
+    font-family: 'Nanum Pen Script', cursive !important; 
+    width:100%;
+}
+body{   
+    height:100vh !important;
+    background: rgb(255,224,209);
+    background-repeat: no-repeat;
+    background-size: auto;
+    background: linear-gradient(180deg, rgba(255,223,207,1) 0%, rgba(253,215,203,1) 25%, rgba(245,209,197,1) 52%);
+    color:#583529;   
+}
+
+#tea-gif{
+    text-align: center;
+}
+.row{
+    margin-left:0 !important;
+}
+img{
+    height:100%;
+}
+.border {
+    margin: 10px;
+    border-radius: 20px;
+    background-color:#B9DDFF;
+    padding: 20px;
+}
+  
+#sampleui {
+    margin:auto;
+    height: 100%;
+    width: 80%;
+}
+
+
+.title{
+    padding: 2em;
+    text-align: center;
+    vertical-align: middle;
+    margin: auto;
+    font-size: 2rem;
+}
+
+.title h1{
+    text-align: center;
+    font-size: 4.4rem;
+}
+
+form {
+    padding: 1em;
+}
+input{
+    padding: 0.5em;
+    width: 74%;
+}
+
+li{
+    line-height:2rem;
+}
+
+button {
+background-color: #FFB9B9;
+padding: 0.1em 0.5em;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 1.2em;
+margin: 10px 5px;
+cursor: pointer;
+border-radius: 20px;
+border: 1px solid #D28D8D;
+}
+
+.none{
+    display:none;
+}
