@@ -1,14 +1,13 @@
 const express = require ('express');
 const routes = require('./routes/tea');
 const mongoose = require('mongoose');
-const cors = require('cors');
 const helmet = require('helmet');
 const compression = require('compression');
 
 require('dotenv').config();
 
 const app = express();
-app.use(cors());
+
 app.use(helmet());
 app.use(compression()); //Compress all routes
 
@@ -30,5 +29,5 @@ mongoose.connect(
     }   
 );
 
-const listener = app.listen(process.env.PORT || 3000);
-module.exports = app;
+app.listen(process.env.PORT || 3000);
+
