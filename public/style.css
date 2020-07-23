@@ -1,7 +1,6 @@
 html *{
     font-family: 'Nanum Pen Script', cursive !important; 
     width:100%;
-    color:#b46784;
 }
 body{   
     height:100vh !important;
@@ -37,11 +36,14 @@ img{
     height:100%;
 }
 #display {
+    min-width:255px;
     margin: auto;
     margin-top: 0.3em;
-    border-radius: 20px;
+    border-radius: 1em;
     background-color:#F8E9FE;
-    padding: 0.2em;
+    padding: 0.2em 0.4em 0.7em 0.4em;
+    font-size: 0.7em;
+    overflow-wrap: break-word;
 }
   
 #sampleui {
@@ -50,9 +52,15 @@ img{
     width: 80%;
 }
 
+@media only screen and (max-width: 600px) {
+    #sampleui {
+        margin:0;
+    }
+}
 
 .title{
-    padding: 2em;
+    color:#b46784;
+    padding: 1em;
     text-align: center;
     margin: auto;
     font-size: 2rem;
@@ -67,31 +75,46 @@ form {
     padding: 1em;
 }
 input{
-    padding: 0.5em;
-    width: 74%;
+    margin-top:0.5em;
+    border:none;
+    border-radius: 1em;
+    padding: 0.2em;
+    width: 40%;
+    min-width:190px;
 }
 
 li{
     line-height:2rem;
 }
 
-button {
-background-color: #FFB9B9;
-padding: 0.1em 0.5em;
-text-align: center;
-text-decoration: none;
-display: inline-block;
-font-size: 1.2em;
-margin: 10px 5px;
-cursor: pointer;
-border-radius: 20px;
-border: 1px solid #D28D8D;
+.form-btn {
+    width: 20%;
+    min-width:150px;
+    background-color: rgb(236, 99, 99);
+    padding: 0.1em;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 0.9em;
+    margin-top:0.5em;
+    cursor: pointer;
+    border-radius: 1em;
+    border: none;
+    color:white;
 }
 
+form{
+    padding:0.2em;
+    padding-bottom: 0.6em;
+}
 .none{
     display:none;
 }
 
 footer div{
     font-size: 1.5em;
+}
+
+p{
+    margin-bottom: 0.2em !important;
 }
