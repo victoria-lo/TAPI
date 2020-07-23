@@ -1,14 +1,30 @@
 html *{
     font-family: 'Nanum Pen Script', cursive !important; 
     width:100%;
+    color:#b46784;
 }
 body{   
     height:100vh !important;
     background: rgb(255,224,209);
     background-repeat: no-repeat;
     background-size: auto;
-    background: linear-gradient(180deg, rgba(255,223,207,1) 0%, rgba(253,215,203,1) 25%, rgba(245,209,197,1) 52%);
-    color:#583529;   
+    background: linear-gradient(180deg, rgba(255,223,207,1) 0%, rgba(253,215,203,1) 25%, rgba(245,209,197,1) 52%);   
+}
+.dropdown{
+    margin: auto;
+    width: 50%;
+    min-width: 250px;
+}
+.dropdown-menu{
+    margin: auto;
+}
+
+.dropdown .btn{
+    background-color:#d7b3c9;
+}
+
+.dropdown-item.active, .dropdown-item:active {
+    background-color: #be9db2 !important;
 }
 
 #tea-gif{
@@ -20,11 +36,12 @@ body{
 img{
     height:100%;
 }
-.border {
-    margin: 10px;
+#display {
+    margin: auto;
+    margin-top: 0.3em;
     border-radius: 20px;
-    background-color:#B9DDFF;
-    padding: 20px;
+    background-color:#F8E9FE;
+    padding: 0.2em;
 }
   
 #sampleui {
@@ -37,7 +54,6 @@ img{
 .title{
     padding: 2em;
     text-align: center;
-    vertical-align: middle;
     margin: auto;
     font-size: 2rem;
 }
@@ -74,4 +90,8 @@ border: 1px solid #D28D8D;
 
 .none{
     display:none;
+}
+
+footer div{
+    font-size: 1.5em;
 }
