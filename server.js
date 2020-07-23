@@ -17,8 +17,14 @@ app.use(express.json()); //parses incoming requests as JSON
 
 app.use('/', routes);
 
-//establish connection to database
+//Index page (static HTML)
+app.route('/')
+  .get(function (req, res) {
+    res.sendFile(process.cwd() + '/index.html');
+});
 
+
+//establish connection to database
 mongoose.connect(
     process.env.MONGODB_URI,
     { useFindAndModify: false,useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true},
