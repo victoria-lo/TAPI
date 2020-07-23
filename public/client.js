@@ -16,10 +16,10 @@ $( document ).ready(function() {
             $('#display').postTea();
         }
         if(selText == "Delete All Tea (Admin only)"){
-            $('#display').postOne();
+            $('#display').delAll();
         }
         if(selText == "Delete One Tea (Admin only)"){
-            $('#display').postOne();
+            $('#display').delOne();
         }
     });
 
@@ -27,7 +27,7 @@ $( document ).ready(function() {
 
 $.fn.getAll = function () {
     $.getJSON('https://tea-api-vic-lo.herokuapp.com/tea', function(data) {
-        $('#display').append("<p>"+JSON.stringify(data)+"</p>")
+        $('#display').append("<pre>"+JSON.stringify(data,null,4)+"</pre>")
     })
 };
 
@@ -37,7 +37,7 @@ $.fn.getOne = function(){
 
     $('#oneTea').on('click', function() {
         $.getJSON('https://tea-api-vic-lo.herokuapp.com/tea/'+$('#getOne').val(), function(data){
-            $('#display').html("<p>Here's your Tea!</p><p>"+JSON.stringify(data)+"</p>")
+            $('#display').html("<p>Here's your Tea!</p><pre>"+JSON.stringify(data,null,4)+"</pre>")
         })
     });
 }
@@ -48,17 +48,50 @@ $.fn.postOne = function(){
     <button type="button" class="form-btn" id="oneComment">Post My Comment~</button>');
 
     $('#oneComment').on('click', function() {
-        console.log($('#postOne').val());
-        const obj=$.ajax({
+        $.ajax({
             url: 'https://tea-api-vic-lo.herokuapp.com/tea/'+$('#postOne').val(),
             type: 'post',
             contentType: 'application/json; charset=utf-8',
             dataType: 'json',
             data: JSON.stringify({"comment":$('#comment').val()}),
             success: function(data) {
-                $('#display').html("<p>Thanks for your comment! Here's all the comments so far.</p><p>"+JSON.stringify(data.comments)+"</p>")
+                $('#display').html("<p>Thanks for your comment! Here's all the comments so far.</p><pre>"+JSON.stringify(data.comments,null,4)+"</pre>")
             }
         });
-        console.log(obj);
+    });
+}
+
+$.fn.postTea = function(){
+    $('#display').append('<form method="post" enctype="multipart/form-data" id="myform">\
+    <input type="text" id="postTeaName" name="name" placeholder="Tea name">\
+    <input type="text" id="description" name="description" placeholder="Description">\
+    <input type="text" id="keywords" name="keywords" placeholder="Keywords">\
+    <input type="text" id="origin" name="origin" placeholder="Origin">\
+    <input type="number" id="time" name="brew_time" placeholder="Brew Time">\
+    <input type="number" id="temperature" name="temperature" placeholder="Temperature"></form>\
+    <input type="file" id="img" name="image" accept="image/*">\
+    <input type="text" id="apikey" name="apikey" placeholder="Admin Password">\
+    <button type="submit" class="form-btn" id="newTea">MAKE new tea!</button>');
+
+    $('#newTea').on('click', function() {
+        let form = $("myform")[0];
+        let fd = new FormData(form);
+        console.log(fd);
+        $.ajax({
+            url: 'https://tea-api-vic-lo.herokuapp.com/tea/',
+            type: 'post',
+            data: fd,
+            contentType: false,
+            crossDomain: true,
+            processData:false,
+            headers:{
+                "dataType": 'jsonp',   
+                "Content-type": "application/javascript",
+                 "apikey": $('#apikey').val()
+            },
+            success: function(data) {
+                $('#display').html("<p>A new tea is born!</p><pre>"+JSON.stringify(data,null,4)+"</pre>")
+            }
+        });
     });
 }

@@ -3,16 +3,22 @@ html *{
     width:100%;
 }
 body{   
-    height:100vh !important;
-    background: rgb(255,224,209);
-    background-repeat: no-repeat;
-    background-size: auto;
+    height:100vh;
+    background-color: rgb(126, 107, 97);
+    background-size:cover;
     background: linear-gradient(180deg, rgba(255,223,207,1) 0%, rgba(253,215,203,1) 25%, rgba(245,209,197,1) 52%);   
+}
+pre{
+    text-align: left;
+    margin-left: 1em;
 }
 .dropdown{
     margin: auto;
     width: 50%;
     min-width: 250px;
+}
+.dropdown button{
+    font-size: 0.8em;
 }
 .dropdown-menu{
     margin: auto;
@@ -26,6 +32,10 @@ body{
     background-color: #be9db2 !important;
 }
 
+.dropdown-item{
+    font-size:1.3em;
+}
+
 #tea-gif{
     text-align: center;
 }
@@ -33,16 +43,17 @@ body{
     margin-left:0 !important;
 }
 img{
-    height:100%;
+    height:90%;
 }
 #display {
     min-width:255px;
     margin: auto;
     margin-top: 0.3em;
     border-radius: 1em;
-    background-color:#F8E9FE;
+    background-color:#f8beba;
+    color:black;
     padding: 0.2em 0.4em 0.7em 0.4em;
-    font-size: 0.7em;
+    font-size: 0.75em;
     overflow-wrap: break-word;
 }
   
@@ -52,9 +63,9 @@ img{
     width: 80%;
 }
 
-@media only screen and (max-width: 600px) {
-    #sampleui {
-        margin:0;
+@media only screen and (max-width: 900px) {
+    img{
+        display: block;
     }
 }
 
@@ -75,11 +86,11 @@ form {
     padding: 1em;
 }
 input{
-    margin-top:0.5em;
     border:none;
     border-radius: 1em;
     padding: 0.2em;
     width: 40%;
+    margin-top: 10px !important;
     min-width:190px;
 }
 
