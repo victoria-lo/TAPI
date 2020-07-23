@@ -48,6 +48,8 @@ img{
 }
 #display {
     min-width:255px;
+    max-height: 500px;
+    overflow: auto;
     margin: auto;
     margin-top: 0.3em;
     border-radius: 1em;
