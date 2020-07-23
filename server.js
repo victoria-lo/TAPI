@@ -16,13 +16,6 @@ app.use('/public', express.static(process.cwd() + '/public')); //make public sta
 app.use('/uploads', express.static('./uploads')); // makes uploads folder available
 
 app.use(cors({origin: '*'})); //for testing only
-app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", '*');
-    res.header("Access-Control-Allow-Credentials", true);
-    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
-    res.header("Access-Control-Allow-Headers", 'Origin,X-Requested-With,Content-Type,Accept,content-type,application/json');
-    next();
-});
 
 app.use(express.json()); //parses incoming requests as JSON
 app.use('/', routes);
