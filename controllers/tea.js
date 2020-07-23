@@ -41,7 +41,7 @@ const newTea = (req, res) => {
             // save to database
             newTea.save((err, data)=>{
                 if(err) return res.json({Error: err});
-                return res.json(data);
+                return res.json("A new tea is born!" + data);
             })            
         }else{
             return res.json({message:"Tea exists"});
@@ -63,9 +63,9 @@ const getAllTea = (req, res) => {
 const deleteAllTea = (req, res) => {
     Tea.deleteMany({}, err => {
         if(err) {
-          return res.json({message: "Something's wrong. Delete failed."});
+          return res.json("Something's wrong. Deletion failed.");
         }
-        return res.json({message: "All tea are deleted successfully... T^T"});
+        return res.json("All tea are deleted successfully... T^T");
     })
 };
 
@@ -93,7 +93,7 @@ const newComment = (req, res) => {
     //find the tea object
     Tea.findOne({name:name}, (err, data) => {
         if(err || !data || !newComment) {
-            return res.json({message: "Tea doesn't exist."});
+            return res.json("Comment fail. Tea doesn't exist.");
         }
         else {
             //add to comments array of the tea object
@@ -115,9 +115,9 @@ const deleteOneTea = (req, res) => {
     let name = req.params.name;
     Tea.deleteOne({name:name}, (err, data) => {
     if(err || !data) {
-        return res.json({message: "Tea doesn't exist."});
+        return res.json("Tea doesn't exist in the first place.");
     }
-    else return res.json({message: "Tea deleted."});
+    else return res.json("Goodbye. Tea is deleted.");
     });
 };
 

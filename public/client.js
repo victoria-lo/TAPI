@@ -33,7 +33,7 @@ $.fn.getAll = function () {
 
 $.fn.getOne = function(){
     $('#display').append('<input type="text" id="getOne" name="name" placeholder="Tea name">\
-        <button type="button" class="form-btn" id="oneTea">Get My Tea~</button>');
+        <button type="button" class="form-btn" id="oneTea">Get My Tea!</button>');
 
     $('#oneTea').on('click', function() {
         $.getJSON('https://tea-api-vic-lo.herokuapp.com/tea/'+$('#getOne').val(), function(data){
@@ -45,7 +45,7 @@ $.fn.getOne = function(){
 $.fn.postOne = function(){
     $('#display').append('<input type="text" id="postOne" name="name" placeholder="Tea to comment">\
     <input type="text" id="comment" name="comment" placeholder="Comment">\
-    <button type="button" class="form-btn" id="oneComment">POST Comment~</button>');
+    <button type="button" class="form-btn" id="oneComment">POST Comment!</button>');
 
     $('#oneComment').on('click', function() {
         $.ajax({
@@ -108,7 +108,29 @@ $.fn.delAll = function(){
                 "apikey": $('#apikeydelAll').val()
             },
             success: function(data) {
-                $('#display').html("<p>All tea are deleted successfully... T^T</p><pre>"+JSON.stringify(data,null,2)+"</pre>")
+                $('#display').html("<pre>"+JSON.stringify(data,null,2)+"</pre>")
+            },
+            error: function (error) {
+                $('#display').html("<p>Invalid Admin Password. Access Denied.</p>")
+            }
+        }); 
+    });
+}
+
+$.fn.delOne = function(){
+    $('#display').append('<input type="text" id="delOne" name="name" placeholder="Tea to delete">\
+    <input type="text" id="apikeydelAll" name="apikeydelAll" placeholder="Admin Password">\
+    <button type="click" class="form-btn" id="delOne">DELETE Tea!</button>');
+
+    $('#delOne').on('click', function() {
+        $.ajax({
+            url: 'https://tea-api-vic-lo.herokuapp.com/tea/'+$('#delOne').val(),
+            type: 'delete',
+            headers:{
+                "apikey": $('#apikeydelAll').val()
+            },
+            success: function(data) {
+                $('#display').html("<pre>"+JSON.stringify(data,null,2)+"</pre>")
             },
             error: function (error) {
                 $('#display').html("<p>Invalid Admin Password. Access Denied.</p>")
