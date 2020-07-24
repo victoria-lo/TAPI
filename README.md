@@ -41,6 +41,7 @@ Project is created with:
 * MongoDB Atlas
 
 #### 👉 Deployed at: https://tea-api-vic-lo.herokuapp.com/
+> Note: heroku can load the page quite slow so patience is needed. Once it loads, it should runs smoothly.
 
 ### Blog
 * Coming soon
