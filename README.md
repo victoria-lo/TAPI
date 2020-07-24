@@ -7,7 +7,7 @@
 * [Setup](#setup)
 
 
-### General info ℹ
+### General info
 TAPI or T-API is a Tea REST API made to show some love for the beverage. 
 
 #### The TEA Object 🍵
@@ -40,7 +40,7 @@ Project is created with:
 * Multer version: 1.4.2 
 * MongoDB Atlas
 
-#### Deployed at: https://tea-api-vic-lo.herokuapp.com/
+#### 👉 Deployed at: https://tea-api-vic-lo.herokuapp.com/
 
 ### Blog
 * Coming soon
