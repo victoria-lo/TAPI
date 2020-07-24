@@ -97,8 +97,27 @@ input{
     min-width:190px;
 }
 
-li{
-    line-height:2rem;
+.tea-btn{
+    max-width: 260px;
+    min-width:250px;
+    background-color: rgb(241, 137, 137);
+    padding: 0.1em;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 0.9em;
+    margin: auto;
+    margin-bottom: 25px;
+    cursor: pointer;
+    border-radius: 1em;
+    border: none;
+    color:white;
+}
+
+.tea-btn:hover{
+    background-color: rgb(236, 99, 99);
+    color:white !important;
+    text-decoration: none !important;
 }
 
 .form-btn {
