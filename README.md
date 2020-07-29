@@ -43,9 +43,10 @@ Project is created with:
 #### 👉 Deployed at: https://tea-api-vic-lo.herokuapp.com/
 > Note: heroku can load the page quite slow so patience is needed. Once it loads, it should runs smoothly.
 
-### Blog
-* Coming soon
-	
+### How I built it
+* Coming soon on https://lo-victoria.com
+
+
 ### Setup
 To run this project, install it locally using npm:
 
@@ -54,3 +55,8 @@ $ cd tapi
 $ npm install
 $ npm start or node server.js
 ```
+
+### Next Steps
+- Populate database
+- Make a PWA using this API
+	
