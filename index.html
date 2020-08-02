@@ -5,9 +5,11 @@
     <meta name="description" content="A cool message board">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="og:image" content="https://github.com/victoria-lo/TAPI/raw/master/uploads/tea.gif">
-    <link rel="stylesheet" href="./public/style.css">
+    
+    <link rel="preload" href="./public/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="./public/style.css"></noscript>
+    <link rel="stylesheet" href="./public/tidy.css">
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
     <link rel="shortcut icon" type="image/x-icon" href="./public/favicon.ico">
@@ -37,7 +39,7 @@
           </div>        
         </div>
         <div id="tea-gif"class = "col-md-5 col-sm-12">
-          <img src="public/Tea.gif"/>
+          <video autoplay muted loop src="public/tea.mp4" type="video/mp4">Your browser does not support the video tag.</video>
         </div>
       </div>
        
