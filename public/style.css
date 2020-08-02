@@ -1,153 +1,167 @@
-html *{
-    font-family: 'Nanum Pen Script', cursive !important; 
-    width:100%;
+html * {
+  font-family: "Nanum Pen Script", cursive !important;
+  width: 100%;
 }
-body{   
-    height:100vh;
-    background-color: rgb(126, 107, 97);
-    background-size:cover;
-    background: linear-gradient(180deg, rgba(255,223,207,1) 0%, rgba(253,215,203,1) 25%, rgba(245,209,197,1) 52%);   
+body {
+  height: 100vh;
+  background-color: rgb(126, 107, 97);
+  background-size: cover;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 223, 207, 1) 0%,
+    rgba(253, 215, 203, 1) 25%,
+    rgba(245, 209, 197, 1) 52%
+  );
 }
-pre{
-    text-align: left;
-    margin-left: 0.2em;
-    margin-right: 0.2em;
+pre {
+  text-align: left;
+  margin-left: 0.2em;
+  margin-right: 0.2em;
 }
-.dropdown{
-    margin: auto;
-    width: 50%;
-    min-width: 250px;
+.dropdown {
+  margin: auto;
+  width: 50%;
+  min-width: 250px;
 }
-.dropdown button{
-    font-size: 0.8em;
+.dropdown button {
+  font-size: 0.8em;
 }
-.dropdown-menu{
-    margin: auto;
-}
-
-.dropdown .btn{
-    background-color:#d7b3c9;
-}
-
-.dropdown-item.active, .dropdown-item:active {
-    background-color: #be9db2 !important;
+.dropdown-menu {
+  margin: auto;
 }
 
-.dropdown-item{
-    font-size:1.3em;
+.dropdown .btn {
+  background-color: #d7b3c9;
 }
 
-#tea-gif{
-    text-align: center;
+.dropdown-item.active,
+.dropdown-item:active {
+  background-color: #be9db2 !important;
 }
-.row{
-    margin-left:0 !important;
+
+.dropdown-item {
+  font-size: 1.3em;
 }
-img{
-    height:auto;
+
+#tea-gif {
+  text-align: center;
+}
+.row {
+  margin-left: 0 !important;
+}
+img {
+  height: auto;
 }
 #display {
-    min-width:255px;
-    max-height: 500px;
-    overflow: auto;
-    margin: auto;
-    margin-top: 0.3em;
-    border-radius: 1em;
-    background-color:#f8beba;
-    color:black;
-    padding: 0.2em 0.4em 0.7em 0.4em;
-    font-size: 0.75em;
-    overflow-wrap: break-word !important;
+  min-width: 255px;
+  max-height: 500px;
+  overflow: auto;
+  margin: auto;
+  margin-top: 0.3em;
+  border-radius: 1em;
+  background-color: #f8beba;
+  color: black;
+  padding: 0.2em 0.4em 0.7em 0.4em;
+  font-size: 0.75em;
+  overflow-wrap: break-word !important;
 }
-  
+
 #sampleui {
-    margin:auto;
-    height: 100%;
-    width: 80%;
+  margin: auto;
+  height: 100%;
+  width: 80%;
 }
 
 @media only screen and (max-width: 900px) {
-    img{
-        display: block;
-    }
+  img {
+    display: block;
+  }
 }
 
-.title{
-    color:#b46784;
-    padding: 1em;
-    text-align: center;
-    margin: auto;
-    font-size: 2rem;
+.title {
+  color: #b46784;
+  padding: 1em;
+  text-align: center;
+  margin: auto;
+  font-size: 2rem;
 }
 
-.title h1{
-    text-align: center;
-    font-size: 4.4rem;
+.title h1 {
+  text-align: center;
+  font-size: 4.4rem;
 }
 
 form {
-    padding: 1em;
+  padding: 1em;
 }
-input{
-    border:none;
-    border-radius: 1em;
-    padding: 0.2em;
-    width: 40%;
-    margin-top: 10px !important;
-    min-width:190px;
-}
-
-.tea-btn{
-    max-width: 260px;
-    min-width:250px;
-    background-color: rgb(241, 137, 137);
-    padding: 0.1em;
-    text-align: center;
-    text-decoration: none;
-    display: block;
-    font-size: 0.9em;
-    margin: auto;
-    margin-bottom: 25px;
-    cursor: pointer;
-    border-radius: 1em;
-    border: none;
-    color:white;
+input {
+  border: none;
+  border-radius: 1em;
+  padding: 0.2em;
+  width: 40%;
+  margin-top: 10px !important;
+  min-width: 190px;
 }
 
-.tea-btn:hover{
-    background-color: rgb(236, 99, 99);
-    color:white !important;
-    text-decoration: none !important;
+*:focus {
+  outline: none !important;
+}
+
+button:hover {
+  background-color: rgb(226, 72, 72);
+}
+
+.tea-btn {
+  max-width: 260px;
+  min-width: 250px;
+  background-color: rgb(241, 137, 137);
+  padding: 0.1em;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  font-size: 0.9em;
+  margin: auto;
+  margin-bottom: 25px;
+  cursor: pointer;
+  border-radius: 1em;
+  border: none;
+  color: white;
+}
+
+.tea-btn:hover {
+  background-color: rgb(236, 99, 99);
+  color: white !important;
+  text-decoration: none !important;
 }
 
 .form-btn {
-    width: 20%;
-    min-width:150px;
-    background-color: rgb(236, 99, 99);
-    padding: 0.1em;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 0.9em;
-    margin-top:0.5em;
-    cursor: pointer;
-    border-radius: 1em;
-    border: none;
-    color:white;
+  width: 20%;
+  min-width: 150px;
+  background-color: rgb(236, 99, 99);
+  padding: 0.1em;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 0.9em;
+  margin-top: 0.5em;
+  cursor: pointer;
+  border-radius: 1em;
+  border: none;
+  color: white;
 }
 
-form{
-    padding:0.2em;
-    padding-bottom: 0.6em;
+form {
+  padding: 0.2em;
+  padding-bottom: 0.6em;
 }
-.none{
-    display:none;
-}
-
-footer div{
-    font-size: 1.5em;
+.none {
+  display: none;
 }
 
-p{
-    margin-bottom: 0.2em !important;
+footer div {
+  font-size: 1.5em;
+}
+
+p {
+  margin-bottom: 0.2em !important;
 }
