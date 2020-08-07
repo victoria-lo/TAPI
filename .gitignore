@@ -13,6 +13,7 @@
 # production
 /build
 .env
+tea.test.js
 
 # misc
 .DS_Store

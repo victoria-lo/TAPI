@@ -15,7 +15,7 @@ app.use(compression()); //Compress all routes
 app.use("/public", express.static(process.cwd() + "/public")); //make public static
 app.use("/uploads", express.static("./uploads")); // makes uploads folder available
 
-app.use(cors({ origin: "https://victoria-lo.github.io" }));
+app.use(cors({ origin: "*" }));
 
 app.use(express.json()); //parses incoming requests as JSON
 app.use("/", routes);
