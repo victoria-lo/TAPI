@@ -48,7 +48,7 @@ Project is created with:
 
 
 ### Setup
-To run this project, install it locally using npm:
+To run this project locally, clone repo and execute in command prompt:
 
 ```
 $ cd tapi
@@ -57,6 +57,6 @@ $ npm start or node server.js
 ```
 
 ### Next Steps
-- Populate database
-- Make a PWA using this API
+- Populate database (DONE)
+- Make a simple PWA using this API (DONE)
 	
