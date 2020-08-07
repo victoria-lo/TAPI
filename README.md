@@ -44,7 +44,7 @@ Project is created with:
 > Note: heroku can load the page quite slow so patience is needed. Once it loads, it should runs smoothly.
 
 ### How I built it
-* Coming soon on https://lo-victoria.com
+* [Check it out here!](https://hashnode.com/series/lets-build-a-nodejs-rest-api-ckcov1aob00dcfms19o5g2x42)
 
 
 ### Setup
