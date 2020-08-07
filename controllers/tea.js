@@ -9,6 +9,7 @@ const checkAuth = (req, res, next) => {
 
   const username = text.split(":")[0];
   const adminPassword = text.split(":")[1];
+  console.log(username + adminPassword);
 
   if (
     username == process.env.USERNAME &&

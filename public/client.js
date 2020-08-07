@@ -81,7 +81,9 @@ $.fn.postOne = function () {
 
 $.fn.postTea = function () {
   $("#display").append(
-    '<form method="post" enctype="multipart/form-data" id="myForm" name="myForm">\
+    '<input type="text" id="user-name" name="user-name" placeholder="Username">\
+    <input type="text" id="password" name="password" placeholder="Admin Password">\
+    <form method="post" enctype="multipart/form-data" id="myForm" name="myForm">\
     <input type="text" id="postTeaName" name="name" placeholder="Tea name">\
     <input type="text" id="description" name="description" placeholder="Description">\
     <input type="text" id="keywords" name="keywords" placeholder="Keywords">\
@@ -89,16 +91,12 @@ $.fn.postTea = function () {
     <input type="number" id="time" name="brew_time" placeholder="Brew Time">\
     <input type="number" id="temperature" name="temperature" placeholder="Temperature">\
     <input type="file" id="img" name="image" accept="image/*"></form>\
-    <input type="text" id="username" name="adminkey" placeholder="Username">\
-    <input type="text" id="adminkey" name="adminkey" placeholder="Admin Password">\
     <button type="submit" class="form-btn" id="newTea">MAKE new tea!</button>'
   );
 
   $("#newTea").on("click", function () {
     let form = document.getElementById("myForm");
     let fd = new FormData(form);
-    const username = $("#username").val();
-    const password = $("#adminKey").val();
     $.ajax({
       url: "https://tea-api-vic-lo.herokuapp.com/tea/",
       type: "post",
@@ -107,7 +105,15 @@ $.fn.postTea = function () {
       crossDomain: true,
       processData: false,
       headers: {
-        Authorization: "Basic " + btoa(`${username}:${password}`),
+        Authorization:
+          "Basic " +
+          btoa(
+            unescape(
+              encodeURIComponent(
+                $("#user-name").val() + ":" + $("#password").val()
+              )
+            )
+          ),
       },
       success: function (data) {
         $("#display").html(
@@ -125,7 +131,8 @@ $.fn.postTea = function () {
 
 $.fn.delAll = function () {
   $("#display").append(
-    '<input type="text" id="apikeydelAll" name="apikeydelAll" placeholder="Admin Password">\
+    '<input type="text" id="user-name" placeholder="Username">\
+    <input type="text" id="password" placeholder="Admin Password">\
     <button type="click" class="form-btn" id="delAll">DELETE ALL!</button>'
   );
 
@@ -134,7 +141,15 @@ $.fn.delAll = function () {
       url: "https://tea-api-vic-lo.herokuapp.com/tea/",
       type: "delete",
       headers: {
-        apikey: $("#apikeydelAll").val(),
+        Authorization:
+          "Basic " +
+          btoa(
+            unescape(
+              encodeURIComponent(
+                $("#user-name").val() + ":" + $("#password").val()
+              )
+            )
+          ),
       },
       success: function (data) {
         $("#display").html(
@@ -152,8 +167,9 @@ $.fn.delAll = function () {
 
 $.fn.delOne = function () {
   $("#display").append(
-    '<input type="text" id="delOne" name="name" placeholder="Tea to delete">\
-    <input type="text" id="apikeydelOne" name="apikeydelOne" placeholder="Admin Password">\
+    '<input type="text" id="user-name" name="user-name" placeholder="Username">\
+    <input type="text" id="password" name="password" placeholder="Admin Password">\
+    <input type="text" id="delOne" name="name" placeholder="Tea to delete">\
     <button type="click" class="form-btn" id="delOneBtn">DELETE Tea!</button>'
   );
 
@@ -162,7 +178,15 @@ $.fn.delOne = function () {
       url: "https://tea-api-vic-lo.herokuapp.com/tea/" + $("#delOne").val(),
       type: "delete",
       headers: {
-        apikey: $("#apikeydelOne").val(),
+        Authorization:
+          "Basic " +
+          btoa(
+            unescape(
+              encodeURIComponent(
+                $("#user-name").val() + ":" + $("#password").val()
+              )
+            )
+          ),
       },
       success: function (data) {
         $("#display").html(
