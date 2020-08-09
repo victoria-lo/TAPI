@@ -58,5 +58,5 @@ $ npm start or node server.js
 
 ### Next Steps
 - Populate database (DONE)
-- Make a simple PWA using this API (DONE)
+- Make a simple PWA using this API (DONE - https://victoria-lo.github.io/Hashtag-TEA/)
 	
