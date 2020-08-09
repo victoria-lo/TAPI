@@ -41,10 +41,10 @@ Project is created with:
 * MongoDB Atlas
 
 #### 👉 Deployed at: https://tea-api-vic-lo.herokuapp.com/
-> Note: heroku can load the page quite slow so patience is needed. Once it loads, it should runs smoothly.
+> Note: heroku can load the page quite slow sp please wait a while. Once it loads, it should run smoothly. Please let me know if you find any bugs or errors at victoria-lo@hotmail.com
 
 ### How I built it
-* [Check it out here!](https://hashnode.com/series/lets-build-a-nodejs-rest-api-ckcov1aob00dcfms19o5g2x42)
+👉 [Check out the series here!](https://hashnode.com/series/lets-build-a-nodejs-rest-api-ckcov1aob00dcfms19o5g2x42)
 
 
 ### Setup
