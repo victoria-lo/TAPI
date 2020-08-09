@@ -4,14 +4,11 @@ html * {
 }
 body {
   height: 100vh;
-  background-color: rgb(126, 107, 97);
-  background-size: cover;
-  background: linear-gradient(
-    180deg,
-    rgba(255, 223, 207, 1) 0%,
-    rgba(253, 215, 203, 1) 25%,
-    rgba(245, 209, 197, 1) 52%
-  );
+  background-color: #ffe2d2 !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background: linear-gradient(180deg, #ffe2d2 0%, #ffdacb 20%, #fad4c5 52%)
+    fixed;
 }
 pre {
   text-align: left;
@@ -49,7 +46,7 @@ pre {
 .row {
   margin-left: 0 !important;
 }
-img {
+video {
   height: auto;
 }
 #display {
@@ -73,7 +70,7 @@ img {
 }
 
 @media only screen and (max-width: 900px) {
-  img {
+  video {
     display: block;
   }
 }
