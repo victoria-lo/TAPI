@@ -19,14 +19,6 @@ const checkAuth = (req, res, next) => {
   } else {
     return res.json("Access Denied.");
   }
-
-  /*
-    if(req.headers.apikey==process.env.API_KEY){
-        return next();
-    }else{
-        return res.json("Invalid Key. Access Denied.");
-    }
-    */
 };
 
 //upload Image
