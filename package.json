@@ -8,7 +8,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "test": "jest"
+    "test": "react-scripts test"
   },
   "author": "Victoria Lo",
   "license": "ISC",
