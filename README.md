@@ -34,6 +34,13 @@ TAPI or T-API is a Tea REST API made to show some love for the beverage.
 	
 ### Technologies
 Project is created with:
+<p>
+<img src="https://img.shields.io/badge/-MongoDB%20-1AA121?style=for-the-badge&logo=mongodb&logoColor=green">
+<img src="https://img.shields.io/badge/-Expressjs%20-%23323330?style=for-the-badge&logo=express">
+<img src="https://img.shields.io/badge/react%20-%2320232a.svg?&style=for-the-badge&logo=react" >   
+<img src="https://img.shields.io/badge/-Nodejs%20-%23323330?style=for-the-badge&logo=Node.js&logoColor=green">
+</p>
+
 * Node version: 12.14.1
 * Express version: 4.17.1
 * Mongoose version: 5.9.25 
