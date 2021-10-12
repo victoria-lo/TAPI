@@ -55,8 +55,12 @@ Project is created with:
 
 
 ### Setup
-To run this project locally, clone repo and execute in command prompt:
+To run this project locally, clone repo and add an `.env` file in the root:
+```
+MONGODB_URI='mongodb+srv://username:password@cluster0.eetsx.mongodb.net/database_name'
+```
 
+Then execute in command prompt:
 ```
 $ cd tapi
 $ npm install
