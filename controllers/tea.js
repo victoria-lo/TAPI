@@ -125,7 +125,8 @@ const newComment = (req, res) => {
 const deleteOneTea = (req, res) => {
   let name = req.params.name;
   Tea.deleteOne({ name: name }, (err, data) => {
-    if (err || data.deletedCount == 0) return res.json(`${name} Tea doesn't exist in the first place.`);
+    if (data.deletedCount == 0) return res.json(`${name} Tea doesn't exist in the first place.`);
+    else if (err) return res.json(`Something went wrong, please try again. ${err}`);
     else return res.json(`Goodbye. ${name} tea is deleted.`);
   });
 };
