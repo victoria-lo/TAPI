@@ -36,9 +36,9 @@ const uploadImg = multer({ storage: storage }).single("image");
 //POST tea
 const newTea = (req, res) => {
   //check if tea already exists in db
-  Tea.findOne({ name: req.body.name }, (data) => {
+  Tea.findOne({ name: req.body.name }, (err, data) => {
     //if tea not in db, add it
-    if (data === null) {
+    if (!data) {
       const newTea = new Tea({
         name: req.body.name,
         image: req.file.path,
@@ -49,13 +49,15 @@ const newTea = (req, res) => {
         temperature: req.body.temperature,
       });
 
-      // save to database
+      //save to database
       newTea.save((err, data) => {
         if (err) return res.json("Something is wrong. Please check.");
         return res.json(data);
       });
+      return res.json("New tea is created.");
     } else {
-      return res.json(`${name} tea already exists.`);
+      if(err) return res.json(`Something went wrong, please try again. ${err}`);
+      return res.json(`${req.body.name} tea already exists.`);
     }
   });
 };
@@ -123,9 +125,8 @@ const newComment = (req, res) => {
 const deleteOneTea = (req, res) => {
   let name = req.params.name;
   Tea.deleteOne({ name: name }, (err, data) => {
-    if (err || !data) {
-      return res.json(`${name} Tea doesn't exist in the first place.`);
-    } else return res.json(`Goodbye. ${name} tea is deleted.`);
+    if (err || data.deletedCount == 0) return res.json(`${name} Tea doesn't exist in the first place.`);
+    else return res.json(`Goodbye. ${name} tea is deleted.`);
   });
 };
 
