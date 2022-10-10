@@ -47,9 +47,6 @@ Project is created with:
 * Multer version: 1.4.2 
 * MongoDB Atlas
 
-#### 👉 Deployed at: https://tea-api-vic-lo.herokuapp.com/
-> Note: heroku can load the page quite slow sp please wait a while. Once it loads, it should run smoothly. Please let me know if you find any bugs or errors at victoria-lo@hotmail.com
-
 ### How I built it
 👉 [Check out the series here!](https://hashnode.com/series/lets-build-a-nodejs-rest-api-ckcov1aob00dcfms19o5g2x42)
 
