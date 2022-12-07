@@ -25,14 +25,13 @@ app.route("/").get(function (req, res) {
   res.sendFile(process.cwd() + "/index.html");
 });
 
+mongoose.set('strictQuery', false);
 //establish connection to database
 mongoose.connect(
   process.env.MONGODB_URI,
   {
-    useFindAndModify: false,
     useUnifiedTopology: true,
     useNewUrlParser: true,
-    useCreateIndex: true,
     serverSelectionTimeoutMS: 5000,
     socketTimeoutMS: 45000
   },

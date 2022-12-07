@@ -41,10 +41,10 @@ Project is created with:
 <img src="https://img.shields.io/badge/-Nodejs%20-%23323330?style=for-the-badge&logo=Node.js&logoColor=green">
 </p>
 
-* Node version: 12.14.1
-* Express version: 4.17.1
-* Mongoose version: 5.9.25 
-* Multer version: 1.4.2 
+* Node version: 16.18.0
+* Express version: 4.18.2
+* Mongoose version: 6.8.0
+* Multer version: 1.4.5
 * MongoDB Atlas
 
 ### How I built it
